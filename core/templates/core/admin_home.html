@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Panel</title>
+</head>
+	<body>
+	<h1>Welcome {{ request.user.username }}</h1>
+	<h2><a href="{% url 'core:register_doctor' %}" > Add doctor </a></h2>
+	<h2><a href="{% url 'core:register_receptionist' %}" > Add Receptionist </a></h2>
+	<h2><a href='http://127.0.0.1:8000/admin' > Manage Database </a></h2>
+	<h2><a href="{% url 'core:allappointment' %}" > See Appointments</a></h2>
+	<a href="{% url 'core:logout' %}">LogOut</a>
+
+</body>
+</html>

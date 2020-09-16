@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete</title>
+</head>
+<body>
+	<p> Are you sure you want to delete{{appointment}}?</p>
+	<a href="{% url 'core:index' %}">cancel</a>
+	<form method='post'>
+		{% csrf_token %}
+		<input type='submit' name='confirm'>
+	</form>
+
+</body>
+</html>

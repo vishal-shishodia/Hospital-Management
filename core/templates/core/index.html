@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+</head>
+<body>
+	
+	<h1>Welcome {{ request.user.username }}</h1>
+	
+		<a href="{% url 'core:addappointment' %}">Add appointment</a>
+		{% if request.user.appointment_set %}
+		<h2>Your Appointments</h2>
+		{% for c in appointments %}
+		<table>
+		<thead>
+			<tr>
+			<th>Doctor</th>
+			<th>Date</th>
+			<th>Status</th>
+			<th>Message</th>
+			</tr>
+			</thead>
+			<tbody>
+			
+			<tr>
+			<td>{{ c.Doctor }}</td>
+			<td>{{ c.Date }}</td>
+			<td>{{ c.status }}</td>
+			<td>{{ c.message }}</td>
+			</tr>
+			
+			
+			</tbody>
+		</table>
+		<a href="{% url 'core:deleteappointment' c.id %}"> Delete </a>
+		{% endfor %}
+			
+		
+		{% endif %}
+		<div>
+			<a href="{% url 'core:logout' %}">LogOut</a>
+		</div>
+		
+</body>
+</html>

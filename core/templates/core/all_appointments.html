@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>All Appointments</h2>
+		<table>
+		<thead>
+			<tr>
+			<th>Patient</th>
+			<th>Doctor</th>
+			<th>Date</th>
+			<th>Status</th>
+			<th>Message</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for c in appointments %}
+			<tr>
+			<td>{{ c.user }}</td>
+			<td>{{ c.Doctor }}</td>
+			<td>{{ c.Date }}</td>
+			<td>{{ c.status }}</td>
+			<td>{{ c.message }}</td>
+			</tr>
+
+		{% endfor %}
+		</tbody>
+		</table>
+</body>
+</html>
